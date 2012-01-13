@@ -6,3 +6,4 @@ syntax: glob
 List Devices.opensdf
 List Devices.sdf
 List Devices.suo
+List Devices/devices.html

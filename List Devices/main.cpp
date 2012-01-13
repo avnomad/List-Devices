@@ -56,7 +56,7 @@ using std::exit;
 #include <algorithms.h>
 #include <windows/common.h>
 #include <char reader.h>
-
+#include <direct input/common.h>
 #include <utility>
 
 
@@ -97,12 +97,12 @@ int WINAPI WinMain(InstanceHandle currentInstance , InstanceHandle PreviusInstan
 
 
 	// open and check output stream
-	ofstream output("c:/output/devices.html");
+	ofstream output("devices.html");
 
 	if(!output)
 	{
 		char temp[MAX_PATH] = _T("Cannot open file:\n\t");
-		strcat(temp,"C:/output/devices.html");
+		strcat(temp,"devices.html");
 		strcat(temp,"\nfor writing.");
 		MessageBox(0,temp,_T("An error has occured!"),MB_OK | MB_ICONERROR);
 		directInputObject->Release();
@@ -189,14 +189,14 @@ int WINAPI WinMain(InstanceHandle currentInstance , InstanceHandle PreviusInstan
 	// call the default program to open the output file and display the results
 	if(system(0))
 	{
-		system("start c:/output/devices.html");
+		system("start devices.html");
 	}
 	else
 		MessageBox(0,_T("No command interpreter is present!"),_T("Warning!"),MB_OK | MB_ICONWARNING);
 
 #ifndef DEBUG
 	// display some information to the user.
-	MessageBox(0,_T("Output was saved in c:/output/devices.html."),_T("Note:"),MB_OK | MB_ICONINFORMATION);
+	MessageBox(0,_T("Output was saved in devices.html."),_T("Note:"),MB_OK | MB_ICONINFORMATION);
 #endif
 	directInputObject->Release();
 } // end function WinMain
