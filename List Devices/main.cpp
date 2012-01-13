@@ -53,9 +53,9 @@ using std::exit;
 #include <dinput.h>
 
 
-#include "../../Unsorted/algorithms.h"
-#include "../../Unsorted/windows common.h"
-#include "../../Unsorted/char reader.h"
+#include <algorithms.h>
+#include <windows/common.h>
+#include <char reader.h>
 
 #include <utility>
 
