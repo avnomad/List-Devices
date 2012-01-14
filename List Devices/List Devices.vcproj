@@ -3,8 +3,8 @@
 	ProjectType="Visual C++"
 	Version="9,00"
 	Name="List Devices"
-	ProjectGUID="{360E6E09-4C80-4223-9A85-4946CAFC0557}"
-	RootNamespace="listdevices"
+	ProjectGUID="{3920F157-A5B8-4890-B311-77A964AF6A90}"
+	RootNamespace="ListDevices"
 	TargetFrameworkVersion="196613"
 	>
 	<Platforms>
@@ -108,15 +108,10 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				Optimization="3"
-				InlineFunctionExpansion="2"
+				Optimization="2"
 				EnableIntrinsicFunctions="true"
-				FavorSizeOrSpeed="1"
-				OmitFramePointers="true"
-				StringPooling="true"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
-				EnableEnhancedInstructionSet="2"
 				WarningLevel="3"
 				DebugInformationFormat="3"
 			/>
@@ -131,7 +126,6 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="dinput8.lib dxguid.lib"
 				GenerateDebugInformation="true"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
@@ -169,11 +163,15 @@
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
 			<File
+				RelativePath="..\..\Unsorted\direct input\direct input common.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\main.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Unsorted\windows common.cpp"
+				RelativePath="..\..\Unsorted\windows\windows common.cpp"
 				>
 			</File>
 		</Filter>
@@ -191,11 +189,15 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\Unsorted\triple.h"
+				RelativePath="..\..\Unsorted\Direct Input\common.h"
 				>
 			</File>
 			<File
-				RelativePath="..\..\Unsorted\windows common.h"
+				RelativePath="..\..\Unsorted\Windows\common.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\Unsorted\triple.h"
 				>
 			</File>
 		</Filter>

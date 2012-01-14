@@ -53,9 +53,11 @@ using std::exit;
 #include <dinput.h>
 
 
-#include "../../Unsorted/algorithms.h"
-#include "../../Unsorted/windows common.h"
-#include "../../Unsorted/char reader.h"
+#include <algorithms.h>
+#include <windows/common.h>
+#include <direct input/common.h>
+
+#include <char reader.h>
 
 #include <utility>
 
@@ -105,7 +107,6 @@ int WINAPI WinMain(InstanceHandle currentInstance , InstanceHandle PreviusInstan
 		strcat(temp,"C:/output/devices.html");
 		strcat(temp,"\nfor writing.");
 		MessageBox(0,temp,_T("An error has occured!"),MB_OK | MB_ICONERROR);
-		directInputObject->Release();
 		exit(0);
 	} // end if
 
@@ -119,7 +120,6 @@ int WINAPI WinMain(InstanceHandle currentInstance , InstanceHandle PreviusInstan
 		strcat(temp,"template.html");
 		strcat(temp,"\nfor reading.");
 		MessageBox(0,temp,_T("An error has occured!"),MB_OK | MB_ICONERROR);
-		directInputObject->Release();
 		exit(0);
 	} // end if
 
@@ -172,7 +172,6 @@ int WINAPI WinMain(InstanceHandle currentInstance , InstanceHandle PreviusInstan
 		else
 		{
 			device->EnumObjects(DIEnumDeviceObjectsCallback,(void *)&output,DIDFT_ALL);
-			device->Release();
 		} // end if-else
 
 		output << close_second_table;
@@ -183,13 +182,20 @@ int WINAPI WinMain(InstanceHandle currentInstance , InstanceHandle PreviusInstan
 	positions = copy_until_sequence(positions.first,CharReader(),positions.second,marker.begin(),marker.end());
 
 
+
+
+
+
+
+
+
 	// close the output file so that another program can open it
 	output.close();
 
 	// call the default program to open the output file and display the results
 	if(system(0))
 	{
-		system("start c:/output/devices.html");
+		system("c:/output/devices.html");
 	}
 	else
 		MessageBox(0,_T("No command interpreter is present!"),_T("Warning!"),MB_OK | MB_ICONWARNING);
@@ -198,5 +204,4 @@ int WINAPI WinMain(InstanceHandle currentInstance , InstanceHandle PreviusInstan
 	// display some information to the user.
 	MessageBox(0,_T("Output was saved in c:/output/devices.html."),_T("Note:"),MB_OK | MB_ICONINFORMATION);
 #endif
-	directInputObject->Release();
 } // end function WinMain
