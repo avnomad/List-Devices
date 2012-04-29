@@ -104,7 +104,7 @@ int WINAPI WinMain(InstanceHandle currentInstance , InstanceHandle PreviusInstan
 		char temp[MAX_PATH] = _T("Cannot open file:\n\t");
 		strcat(temp,"devices.html");
 		strcat(temp,"\nfor writing.");
-		MessageBox(0,temp,_T("An error has occured!"),MB_OK | MB_ICONERROR);
+		MessageBox(0,temp,_T("An error has occurred!"),MB_OK | MB_ICONERROR);
 		directInputObject->Release();
 		exit(0);
 	} // end if
@@ -118,7 +118,7 @@ int WINAPI WinMain(InstanceHandle currentInstance , InstanceHandle PreviusInstan
 		char temp[MAX_PATH] = _T("Cannot open file:\n\t");
 		strcat(temp,"template.html");
 		strcat(temp,"\nfor reading.");
-		MessageBox(0,temp,_T("An error has occured!"),MB_OK | MB_ICONERROR);
+		MessageBox(0,temp,_T("An error has occurred!"),MB_OK | MB_ICONERROR);
 		directInputObject->Release();
 		exit(0);
 	} // end if
@@ -167,7 +167,7 @@ int WINAPI WinMain(InstanceHandle currentInstance , InstanceHandle PreviusInstan
 		IDirectInputDevice8 *device;	// a pointer to a device (mouse, keyboard, ect.)
 		if(directInputObject->CreateDevice(devices[c].guidInstance,&device,NULL) != DI_OK)
 		{
-			MessageBox(0,("Cannot create the device \""+string(devices[c].tszInstanceName)+"\".").c_str(),_T("An error has occured!"),MB_OK | MB_ICONERROR);
+			MessageBox(0,("Cannot create the device \""+string(devices[c].tszInstanceName)+"\".").c_str(),_T("An error has occurred!"),MB_OK | MB_ICONERROR);
 		} // end if
 		else
 		{
